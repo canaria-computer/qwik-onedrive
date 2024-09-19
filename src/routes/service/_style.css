@@ -1,0 +1,17 @@
+:root {
+  --animation-time: 1000ms;
+}
+.slide {
+  transition:
+    opacity var(--animation-time),
+    visibility 0s ease var(--animation-time);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide.is-show {
+  transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+}
