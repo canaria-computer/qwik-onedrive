@@ -19,7 +19,7 @@ We recognize the importance of making our application accessible to everyone, re
 Our aim is to comply with all Level AA criteria and selected Level AAA criteria from the W3C Web Content Accessibility Guidelines (WCAG) 2.2.
 
 **Scope:**  
-This policy applies to all web pages under the domain https://_owndomain_.example.com/.
+This policy applies to all web pages under the domain [https://onedrive.gdpf.2pc.nexus/](https://onedrive.gdpf.2pc.nexus/).
 
 ### Detailed Objectives
 
