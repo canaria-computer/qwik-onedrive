@@ -1,21 +1,8 @@
-import {
-  $,
-  component$,
-  useOnDocument,
-  useOnWindow,
-  useSignal,
-} from "@builder.io/qwik";
+import { $, component$, useOnWindow, useSignal } from "@builder.io/qwik";
 import fscreen from "fscreen";
 
 export default component$(() => {
   const isFullScreen = useSignal(false);
-  const isSupport = useSignal(true);
-  useOnDocument(
-    "DOMContentLoaded",
-    $(() => {
-      isSupport.value = !(fscreen.fullscreenElement === undefined);
-    }),
-  );
   useOnWindow(
     "fullscreenchange",
     $(() => {
@@ -27,7 +14,7 @@ export default component$(() => {
       }
     }),
   );
-  return isSupport.value ? (
+  return fscreen.fullscreenElement !== undefined ? (
     <>
       <button
         class="m-3 mx-1 rounded-sm bg-gray-800/50 p-2 py-3 shadow-md dark:bg-gray-950/80"
