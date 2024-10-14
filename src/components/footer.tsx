@@ -93,6 +93,10 @@ export const SiteMap = component$(() => {
           (import.meta.env.PUBLIC_THE_ONION_URL || "") === "" ? "" : "/Tor/",
         logo: "i-logos-tor-browser",
       },
+      Donate: {
+        href: "/donate/",
+        logo: "i-bx-donate-heart",
+      },
     },
   };
   return (

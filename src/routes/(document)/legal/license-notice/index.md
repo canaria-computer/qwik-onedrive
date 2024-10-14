@@ -13,6 +13,7 @@ I would like to extend my heartfelt thanks to the following libraries and resour
 - **[Google Material Design Icons](https://material.io/resources/icons/)** for the fantastic iconography 💎
 - **[SVG Logo](https://github.com/gilbarbara/logos)** for the diverse and beautiful logos 🌟
 - **[Weather Icons](https://github.com/erikflowers/weather-icons)** for reliable and stylish weather icons ☀️
+- **[Boxicons](https://boxicons.com/)** Supports a variety of icons 🌠
 - **[Meteocons](https://github.com/basmilius/weather-icons)** for the amazing weather-related icons 🌧️
 - **[idb](https://github.com/jakearchibald/idb)** A tiny IndexedDB wrapper 🗃️
 - **[superstruct](https://github.com/ianstormtaylor/superstruct)** A simple and composable way to robust validate data 🔍

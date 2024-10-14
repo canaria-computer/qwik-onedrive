@@ -30,7 +30,7 @@ export default {
   },
   plugins: [
     iconsPlugin({
-      collections: getIconCollections(["ic", "wi", "meteocons", "svg-spinners", "logos"]),
+      collections: getIconCollections(["ic", "wi", "meteocons", "svg-spinners", "logos", "bx"]),
     }),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
