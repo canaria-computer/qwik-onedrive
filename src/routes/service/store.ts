@@ -1,4 +1,4 @@
-import type { Signal } from "@builder.io/qwik";
+import type { QRL, Signal } from "@builder.io/qwik";
 import { createContextId } from "@builder.io/qwik";
 import type { Infer } from "superstruct";
 import * as s from "superstruct";
@@ -17,3 +17,15 @@ export type SelectedFolders = Infer<typeof SelectedFolders>;
 
 export const SlectedFolderIdsCTX =
   createContextId<Signal<SelectedFolders[]>>("SlectFolderIdCTX");
+
+export interface DecorationDateTime {
+  format: {
+    up: string;
+    down: string;
+  };
+  updateUpFormatText: QRL<(this: DecorationDateTime, text: string) => void>;
+  updateDownFormatText: QRL<(this: DecorationDateTime, text: string) => void>;
+}
+
+export const DecorationDateTimeCTX =
+  createContextId<DecorationDateTime>("DecorationDateTime");

@@ -7,8 +7,12 @@ import {
   useStore,
 } from "@builder.io/qwik";
 import AccessTokenHandler from "./accessTokenHandler";
-import type { AccessToken } from "./store";
-import { AccessTokenCTX, SlectedFolderIdsCTX } from "./store";
+import type { AccessToken, DecorationDateTime } from "./store";
+import {
+  AccessTokenCTX,
+  DecorationDateTimeCTX,
+  SlectedFolderIdsCTX,
+} from "./store";
 import { OneDriveResource } from "./oneDriveRootResouceHandler";
 import { SelectFoldersDisplay } from "./selectFoldersDisplay";
 import { LoadImageDisplay } from "./LoadImageDisplay";
@@ -58,6 +62,16 @@ export default component$(() => {
   useContextProvider(animationTransitionTimeCTX, animationTransitionTime);
   const channel = useSignal<NoSerialize<BroadcastChannel> | null>(null);
   useContextProvider(channelCTX, channel);
+  const decoration = useStore<DecorationDateTime>({
+    format: { down: "", up: "" },
+    updateUpFormatText: $(function (this: DecorationDateTime, text: string) {
+      this.format.up = text;
+    }),
+    updateDownFormatText: $(function (this: DecorationDateTime, text: string) {
+      this.format.down = text;
+    }),
+  });
+  useContextProvider(DecorationDateTimeCTX, decoration);
 
   return (
     <>
