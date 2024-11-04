@@ -26,6 +26,7 @@ const PausePlayButton = component$(() => {
           ) : (
             <div class="i-ic-play-arrow h-10 w-10 text-center font-bold text-white dark:text-gray-100" />
           )}
+          <span class="sr-only">Pause Image</span>
         </div>
       </button>
     </>

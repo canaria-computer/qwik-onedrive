@@ -25,6 +25,7 @@ export default component$(() => {
         <div class="text-center text-2xl font-bold text-white drop-shadow-md [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
           <div class="i-ic-skip-next h-10 w-10 text-center font-bold text-white dark:text-gray-100" />
         </div>
+        <span class="sr-only">Next Image</span>
       </button>
     </>
   );

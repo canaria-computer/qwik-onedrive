@@ -33,6 +33,7 @@ export default component$(() => {
             <div class="i-ic-baseline-fullscreen h-10 w-10 text-center font-bold text-white dark:text-gray-100" />
           )}
         </div>
+        <span class="sr-only">FullScreen</span>
       </button>
     </>
   ) : (
