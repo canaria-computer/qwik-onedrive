@@ -10,9 +10,10 @@ export default component$(() => {
   });
 
   useOnDocument(
-    "keypress",
+    "keydown",
     $((event) => {
-      if (event.key === "p") {
+      if (event.key.toLowerCase() === "p" && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
         clickHandler();
       }
     }),

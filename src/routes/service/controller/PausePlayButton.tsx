@@ -7,9 +7,10 @@ const PausePlayButton = component$(() => {
     isRunning.value = !isRunning.value;
   });
   useOnDocument(
-    "keypress",
+    "keydown",
     $((event) => {
-      if (event.key === "k") {
+      if (event.key.toLowerCase() === "k" && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
         clickHandler();
       }
     }),

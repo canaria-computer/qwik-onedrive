@@ -9,9 +9,10 @@ export default component$(() => {
       (currentImageIndex.value + 1 + imageLength.value) % imageLength.value;
   });
   useOnDocument(
-    "keypress",
+    "keydown",
     $((event) => {
-      if (event.key === "n") {
+      if (event.key.toLowerCase() === "n" && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault();
         clickHandler();
       }
     }),
