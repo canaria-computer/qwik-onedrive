@@ -11,6 +11,7 @@ import type { AccessToken, DecorationDateTime } from "./store";
 import {
   AccessTokenCTX,
   DecorationDateTimeCTX,
+  DecorationPositionCTX,
   SlectedFolderIdsCTX,
 } from "./store";
 import { OneDriveResource } from "./oneDriveRootResouceHandler";
@@ -72,6 +73,8 @@ export default component$(() => {
     }),
   });
   useContextProvider(DecorationDateTimeCTX, decoration);
+  const decorationPosition = useSignal("bottomRight");
+  useContextProvider(DecorationPositionCTX, decorationPosition);
 
   return (
     <>
