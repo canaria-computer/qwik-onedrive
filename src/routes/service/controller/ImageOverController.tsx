@@ -15,7 +15,7 @@ const ImageOverController = component$(
               <Slot />
             </div>
             {!imagesNotSelected && (
-              <div class="absolute bottom-0 right-0 mr-1 flex flex-row justify-end">
+              <div class="absolute bottom-0 right-0 mx-1 flex flex-row justify-end">
                 <Decoration />
                 <PreviousImage />
                 <PausePlayButton />
