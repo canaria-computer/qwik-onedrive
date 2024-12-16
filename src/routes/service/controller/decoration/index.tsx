@@ -53,13 +53,15 @@ export default component$(() => {
   };
 
   return (
-    <div class="m-3 mx-1 rounded-sm bg-gray-800/50 p-2 px-7 font-mono tracking-tighter shadow-md dark:bg-gray-950/80">
-      <div class="text-center text-2xl font-bold text-white drop-shadow-md [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
-        {formatTime()}
+    decorationConfig.isEnable && (
+      <div class="m-3 mx-1 rounded-sm bg-gray-800/50 p-2 px-7 font-mono tracking-tighter shadow-md dark:bg-gray-950/80">
+        <div class="text-center text-2xl font-bold text-white drop-shadow-md [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
+          {formatTime()}
+        </div>
+        <div class="text-center text-sm font-bold text-white [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
+          {formatDate()}
+        </div>
       </div>
-      <div class="text-center text-sm font-bold text-white [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
-        {formatDate()}
-      </div>
-    </div>
+    )
   );
 });

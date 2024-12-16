@@ -23,8 +23,10 @@ export interface DecorationDateTime {
     up: string;
     down: string;
   };
+  isEnable: boolean;
   updateUpFormatText: QRL<(this: DecorationDateTime, text: string) => void>;
   updateDownFormatText: QRL<(this: DecorationDateTime, text: string) => void>;
+  updateEnable: QRL<(this: DecorationDateTime, enable: boolean) => void>;
 }
 
 export const DecorationDateTimeCTX =

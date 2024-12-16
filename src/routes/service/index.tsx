@@ -64,11 +64,15 @@ export default component$(() => {
   useContextProvider(channelCTX, channel);
   const decoration = useStore<DecorationDateTime>({
     format: { down: "", up: "" },
+    isEnable: false,
     updateUpFormatText: $(function (this: DecorationDateTime, text: string) {
       this.format.up = text;
     }),
     updateDownFormatText: $(function (this: DecorationDateTime, text: string) {
       this.format.down = text;
+    }),
+    updateEnable: $(function (this: DecorationDateTime, value: boolean) {
+      this.isEnable = value;
     }),
   });
   useContextProvider(DecorationDateTimeCTX, decoration);
