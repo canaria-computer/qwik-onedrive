@@ -4,6 +4,7 @@ import {
   Resource,
   useContext,
   $,
+  useSignal,
 } from "@builder.io/qwik";
 import type { CachedImage } from "./db/config";
 import { imageCacheCTX, STORE_NAME } from "./db/config";
@@ -24,6 +25,7 @@ export const ImageWithCache = component$<{
   timeRemaining: number;
 }>(({ id, url, hash, isHidden, timeRemaining }) => {
   const db = useContext(imageCacheCTX);
+  const isChanging = useSignal(false);
 
   const getCachedImage = $(async (id: string): Promise<CachedImage | null> => {
     if (!db.value) return null;
@@ -63,16 +65,25 @@ export const ImageWithCache = component$<{
     animationTransitionTimeCTX,
   );
   const isRunning = useContext(isRunningCTX);
+
+  const updateIsChanging = $(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      isChanging.value = true;
+    } else {
+      isChanging.value =
+        (switchInterval.interval - animationTransitionTime / 2 >
+          timeRemaining &&
+          timeRemaining > animationTransitionTime / 2) ||
+        !isRunning.value;
+    }
+  });
+
   return (
     <Resource
       value={imageResource}
       onResolved={(src) => {
         const [preferred, ...redundancy] = src;
-        const isChangeing =
-          (switchInterval.interval - animationTransitionTime / 2 >
-            timeRemaining &&
-            timeRemaining > animationTransitionTime / 2) ||
-          !isRunning.value;
+        updateIsChanging();
 
         return (
           <SwipeManager>
@@ -82,11 +93,12 @@ export const ImageWithCache = component$<{
                 class={`relative overflow-hidden ${isHidden ? "hidden" : ""} bg-black`}
               >
                 <div
-                  class={`slide absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat blur-md ${isChangeing ? "is-show opacity-100" : "opacity-0"}`}
+                  class={`slide absolute motion-safe:inset-0 motion-safe:scale-105 motion-safe:bg-cover motion-safe:bg-center motion-safe:bg-no-repeat motion-safe:blur-md ${isChanging.value ? "is-show motion-safe:opacity-100" : "motion-safe:opacity-0"}`}
                   style={{
                     backgroundImage: src.map((v) => `url('${v}')`).join(", "),
                   }}
                 />
+
                 <div class="relative flex w-full items-center justify-center">
                   <picture>
                     <img
@@ -94,13 +106,19 @@ export const ImageWithCache = component$<{
                       alt=""
                       width={200}
                       height={200}
-                      class={`slide h-dvh w-auto max-w-full object-scale-down ${isChangeing ? "is-show" : ""}`}
+                      class={`slide h-dvh w-auto max-w-full object-scale-down
+                        motion-safe:transition-all motion-safe:duration-500
+                        ${isChanging.value ? "is-show motion-safe:opacity-100" : "motion-safe:opacity-0"}
+                        motion-reduce:opacity-100`}
                     />
                     {redundancy.map((v) => (
                       <source
                         src={v}
                         key={v}
-                        class={`slide h-dvh w-auto max-w-full object-scale-down ${isChangeing ? "is-show" : ""}`}
+                        class={`slide h-dvh w-auto max-w-full object-scale-down
+                          motion-safe:transition-all motion-safe:duration-500
+                          ${isChanging.value ? "is-show motion-safe:opacity-100" : "motion-safe:opacity-0"}
+                          motion-reduce:opacity-100`}
                       />
                     ))}
                   </picture>

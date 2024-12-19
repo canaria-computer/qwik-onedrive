@@ -1,21 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
-
 import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
+
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {},
-  },
-  variants: {
-    visibility: ["responsive", "hover", "focus", "group-hover"],
-  },
-  theme: {
     extend: {
+      screens: {
+        'motion-safe': { 'raw': '(prefers-reduced-motion: no-preference)' },
+        'motion-reduce': { 'raw': '(prefers-reduced-motion: reduce)' },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
         slidein: {
@@ -26,6 +23,14 @@ export default {
       animation: {
         slidein: 'slidein 1s ease-in 1s infinite reverse both',
       },
+    },
+  },
+  variants: {
+    extend: {
+      visibility: ["responsive", "hover", "focus", "group-hover"],
+      opacity: ['motion-safe', 'motion-reduce'],
+      scale: ['motion-safe', 'motion-reduce'],
+      blur: ['motion-safe', 'motion-reduce'],
     },
   },
   plugins: [
