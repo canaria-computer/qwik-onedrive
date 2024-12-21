@@ -24,7 +24,10 @@ export default component$(() => {
     }),
   );
   return (
-    <label for="Option1" class="my-2 flex cursor-pointer items-start gap-4">
+    <label
+      for="AcceptConditions"
+      class="my-2 flex cursor-pointer items-start gap-4"
+    >
       <div class="flex items-center">
         <Checkbox />
       </div>
