@@ -72,6 +72,7 @@ export const SiteMap = component$(() => {
         logo: "i-ic-baseline-description",
         href: "/legal/ToS/",
       },
+      "About this App": { logo: "i-ic-outline-apps", href: "/about/" },
       cookie: { logo: "i-ic-twotone-cookie", href: "/legal/cookie/" },
       Accessibility: { logo: "i-ic-baseline-accessible", href: "/legal/a11y/" },
     },
@@ -96,6 +97,10 @@ export const SiteMap = component$(() => {
       Donate: {
         href: "/donate/",
         logo: "i-bx-donate-heart",
+      },
+      Home: {
+        href: "/",
+        logo: "i-ic-outline-home",
       },
     },
   };
