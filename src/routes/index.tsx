@@ -2,12 +2,14 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Banner from "~/components/banner";
 import Card from "~/components/card";
+import Features from "~/components/features";
 import Pricing from "~/components/pricing";
 
 export default component$(() => {
   return (
     <>
       <Banner />
+      <Features />
       <Card />
       <Pricing />
     </>
