@@ -51,7 +51,7 @@ export const SocialsLink = component$(() => {
       <ul class="flex justify-center gap-6 md:gap-8">
         <li>
           <a
-            href="#"
+            href="https://github.com/canaria-computer/qwik-onedrive"
             rel="noreferrer"
             target="_blank"
             class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
