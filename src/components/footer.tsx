@@ -8,7 +8,8 @@ export default component$(() => {
         <div class="m-8 border-t border-gray-100 p-4">
           <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-700 dark:text-gray-200">
             We're committed to enhancing your digital photo frame experience. If
-            you have any feedback, we'd love to hear it. Enjoy GDPF! 📸🎉
+            you have any feedback, we'd love to hear it. Enjoy Web Digital Photo
+            Frame! 📸🎉
           </p>
           <SiteMap />
           <SocialsLink />

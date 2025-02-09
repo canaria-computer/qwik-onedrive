@@ -1,27 +1,27 @@
 ---
-title: 📱 GDPF Frequently Asked Questions
-last-modified: 2024-09-08
-# published: 2024-09-08
+title: 📱 Web Digital Photo Frame Frequently Asked Questions
+last-modified: 2025-02-03
+# published: 2025-02-03
 ---
 ## Basic Questions 🤔
 
-### Q1: Is GDPF really free?
+### Q1: Is Web Digital Photo Frame really free?
 
-**A:** Yes! GDPF is completely free to use. There are no additional charges or hidden costs. It's developed as a personal project without pursuing profit. 💝
+**A:** Yes! Web Digital Photo Frame is completely free to use. There are no additional charges or hidden costs. It's developed as a personal project without pursuing profit. 💝
 
-### Q2: Why does GDPF only support OneDrive?
+### Q2: Why does Web Digital Photo Frame only support OneDrive?
 
-**A:** While many apps support Google Drive and Google Photos, GDPF specifically chose to meet the needs of OneDrive users. While we may consider supporting other cloud storage services in the future, we're currently focused on providing perfect OneDrive support. ☁️
+**A:** While many apps support Google Drive and Google Photos, Web Digital Photo Frame specifically chose to meet the needs of OneDrive users. While we may consider supporting other cloud storage services in the future, we're currently focused on providing perfect OneDrive support. ☁️
 
 ### Q3: Which browsers can I use?
 
-**A:** GDPF works with all major modern browsers (Chrome, Firefox, Edge, Safari, etc.). We recommend keeping your browser updated to the latest version for the best experience. 🌐
+**A:** Web Digital Photo Frame works with all major modern browsers (Chrome, Firefox, Edge, Safari, etc.). We recommend keeping your browser updated to the latest version for the best experience. 🌐
 
 ## Privacy & Security 🔒
 
 ### Q4: How is my personal information protected?
 
-**A:** GDPF protects your personal information with the following policies:
+**A:** Web Digital Photo Frame protects your personal information with the following policies:
 
 - No data collection
 - No advertising tracking
@@ -33,9 +33,9 @@ last-modified: 2024-09-08
 
 ## Features ⚙️
 
-### Q6: Can I use GDPF offline?
+### Q6: Can I use Web Digital Photo Frame offline?
 
-**A:** While GDPF isn't fully offline-compatible, it's designed to work efficiently in low-bandwidth environments. Thanks to image caching, previously loaded images can be displayed even with unstable internet connections. However, you'll need an internet connection to load new images and sync with OneDrive. 🔄
+**A:** While Web Digital Photo Frame isn't fully offline-compatible, it's designed to work efficiently in low-bandwidth environments. Thanks to image caching, previously loaded images can be displayed even with unstable internet connections. However, you'll need an internet connection to load new images and sync with OneDrive. 🔄
 
 ### Q7: What's the source of weather forecast information?
 
@@ -53,13 +53,13 @@ last-modified: 2024-09-08
 
 ## Others 💭
 
-### Q10: Is GDPF open source?
+### Q10: Is Web Digital Photo Frame open source?
 
-**A:** Yes, GDPF's source code is [available on GitHub](https://github.com/canaria-computer/qwik-onedrive). We welcome feedback and contributions from the community. 📖
+**A:** Yes, Web Digital Photo Frame's source code is [available on GitHub](https://github.com/canaria-computer/qwik-onedrive). We welcome feedback and contributions from the community. 📖
 
 ### Q11: Where can I report bugs or request features?
 
-**A:** You can report issues or make feature requests through GitHub Issues or our dedicated feedback form. We seriously consider all feedback to improve GDPF. 📮
+**A:** You can report issues or make feature requests through GitHub Issues or our dedicated feedback form. We seriously consider all feedback to improve Web Digital Photo Frame. 📮
 
 ## Upcoming Features 🚀
 

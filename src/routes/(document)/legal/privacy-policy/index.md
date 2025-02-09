@@ -8,7 +8,7 @@ published: 2024-09-13
 
 ### 1. Introduction 👋
 
-The Generic Digital Photo Frame (GDPF) application (hereinafter referred to as "our app") considers the privacy of our users to be of utmost importance. This privacy policy explains how our app handles user information.
+Web Digital Photo Frame (hereinafter referred to as "our app") considers the privacy of our users to be of utmost importance. This privacy policy explains how our app handles user information.
 
 ### 2. Information Collection and Use 📊
 

@@ -41,10 +41,12 @@ const OnionLink = component$(() => {
   return (
     <div>
       <h2 class="mb-4 text-4xl font-bold">
-        Access all GDPF services with the Tor network
+        Access all Web Digital Photo Frame with the Tor network
       </h2>
 
-      <p class="mb-4">GDPF has an official onion website for Tor users.</p>
+      <p class="mb-4">
+        Web Digital Photo Frame has an official onion website for Tor users.
+      </p>
 
       <Link
         href={onionUrl}

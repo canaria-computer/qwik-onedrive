@@ -6,7 +6,7 @@ import Published from "./components/Published";
 import LastModified from "./components/LastModified";
 
 const appDescription =
-  "Generic Digital Photo Frame (GDPF) is a digital photo frame application provide completely free of charge with OneDrive integration, image cache function, and no Ad.";
+  "Web Digital Photo Frame - Free OneDrive-Connected Digital Photo Frame App | Cross-Platform";
 
 export const head: DocumentHead = {
   meta: [

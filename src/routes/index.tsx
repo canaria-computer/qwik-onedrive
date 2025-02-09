@@ -17,12 +17,13 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to GDPF",
+  title:
+    "Web Digital Photo Frame - Free OneDrive-Connected Digital Photo Frame App | Cross-Platform",
   meta: [
     {
       name: "description",
       content:
-        "Generic Digital Photo Frame (GDPF) is a digital photo frame application provide completely free of charge with OneDrive integration, image cache function, and no Ad.",
+        "Web Digital Photo Frame is a free, web-based digital photo frame app that seamlessly connects with OneDrive. Access and display your cherished memories from any device, anytime, anywhere",
     },
     {
       property: "og:image",

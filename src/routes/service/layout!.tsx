@@ -21,5 +21,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "📸🎞️ GDPF",
+  title: "Web Digital Photo Frame",
 };
