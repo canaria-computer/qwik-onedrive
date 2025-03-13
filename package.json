@@ -29,40 +29,47 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.8.0",
-    "@builder.io/qwik-city": "^1.8.0",
-    "@egoist/tailwindcss-icons": "^1.8.1",
-    "@iconify/json": "^2.2.238",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.14",
+    "@builder.io/qwik": "^1.12.1",
+    "@builder.io/qwik-city": "^1.12.1",
+    "@egoist/tailwindcss-icons": "^1.9.0",
+    "@iconify/json": "^2.2.314",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/eslint": "8.56.10",
     "@types/fscreen": "^1.0.4",
     "@types/node": "20.14.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.20",
     "eslint": "8.57.0",
-    "eslint-plugin-qwik": "^1.8.0",
-    "postcss": "^8.4.31",
+    "eslint-plugin-qwik": "^1.12.1",
+    "postcss": "^8.5.3",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "3.4.10",
     "typescript": "5.4.5",
-    "undici": "*",
+    "undici": "^6.21.1",
     "vite": "5.3.5",
-    "vite-tsconfig-paths": "^4.2.1",
-    "wrangler": "^3.73.0"
+    "vite-tsconfig-paths": "^4.3.2",
+    "wrangler": "^3.114.0"
   },
   "dependencies": {
-    "@azure/msal-browser": "^3.22.0",
-    "@material-tailwind/html": "^2.2.3",
+    "@azure/msal-browser": "^3.28.1",
+    "@material-tailwind/html": "^2.3.2",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@microsoft/microsoft-graph-types": "^2.40.0",
-    "cross-fetch": "^4.0.0",
+    "cross-fetch": "^4.1.0",
     "dayjs": "^1.11.13",
     "fscreen": "^1.2.0",
-    "idb": "^8.0.0",
+    "idb": "^8.0.2",
+    "openmeteo": "^1.1.5",
     "superstruct": "^2.0.2",
     "tinygesture": "^3.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "workerd"
+    ]
   }
 }

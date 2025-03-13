@@ -25,3 +25,7 @@ export const animationTransitionTimeCTX =
 
 export const channelCTX =
   createContextId<Signal<NoSerialize<BroadcastChannel> | null>>("channelCTX");
+
+export const isAutoWeatherDateFetchCTX = createContextId<Signal<boolean>>(
+  "isAutoWeatherDateFetchCTX",
+);
