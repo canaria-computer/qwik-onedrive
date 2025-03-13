@@ -22,8 +22,10 @@ export const SelectFoldersDisplay = component$(() => {
     );
   });
   return (
-    <div class="m-1 border p-5">
-      <strong class="m-1 p-1">Selected folders</strong>
+    <details class="m-1 border">
+      <summary class="m-1 p-1">
+        Selecting {selectFolders.value.length} folders
+      </summary>
       <ul>
         {selectFolders.value.map((v) => (
           <li class="ml-4 p-1 before:content-['_-_']" key={v.id}>
@@ -31,6 +33,6 @@ export const SelectFoldersDisplay = component$(() => {
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 });
