@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
+import { tailwindWeatherIconSafeList } from "./src/utils/openmeteo/config";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -43,4 +44,7 @@ export default {
       addVariant('hocus', ['&:hover', '&:focus']);
     })
   ],
+  safelist: [
+    tailwindWeatherIconSafeList
+  ]
 };

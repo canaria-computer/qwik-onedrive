@@ -5,6 +5,7 @@ import PreviousImage from "./previousImage";
 import NextImage from "./nextImage";
 import Decoration from "./decoration";
 import { DecorationPositionCTX, positionSet } from "../store";
+import Weather from "./weather";
 
 const ImageOverController = component$(
   ({ imagesNotSelected }: { imagesNotSelected: boolean }) => {
@@ -20,6 +21,7 @@ const ImageOverController = component$(
               <div
                 class={`absolute mx-1 flex flex-row justify-end ${positionSet[position.value]}`}
               >
+                <Weather />
                 <Decoration />
                 <PreviousImage />
                 <PausePlayButton />

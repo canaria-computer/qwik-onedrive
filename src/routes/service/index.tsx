@@ -25,6 +25,7 @@ import {
   channelCTX,
   currentImageIndexCTX,
   imageLengthCTX,
+  isAutoWeatherDateFetchCTX,
   isRunningCTX,
   switchIntervalCTX,
   synchronizeCTX,
@@ -79,6 +80,8 @@ export default component$(() => {
   useContextProvider(DecorationDateTimeCTX, decoration);
   const decorationPosition = useSignal("bottomRight");
   useContextProvider(DecorationPositionCTX, decorationPosition);
+  const isAutoWheatherDateFethcOK = useSignal(false);
+  useContextProvider(isAutoWeatherDateFetchCTX, isAutoWheatherDateFethcOK);
 
   return (
     <>
