@@ -25,6 +25,7 @@ export default component$(() => {
   const lastUpdateTime = useSignal(Date.now());
   const cachedData = useSignal<WeatherData | null>(null);
   const isAutoWheatherDateFethcOK = useContext(isAutoWeatherDateFetchCTX);
+  const isLoading = useSignal(false);
 
   const weatherData = useResource$<WeatherData>(async ({ track, cleanup }) => {
     track(() => isAutoWheatherDateFethcOK.value);
@@ -36,19 +37,26 @@ export default component$(() => {
     if (!isAutoWheatherDateFethcOK.value)
       throw new Error("Auto weather data fetch is disabled");
 
-    const position = await getPosition();
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (!position) throw new Error("Geolocation is not available");
+    if (cachedData.value) {
+      isLoading.value = true;
+    }
 
-    const weather = await WeatherDataFetcher(
-      position.coords.latitude,
-      position.coords.longitude,
-    );
+    try {
+      const position = await getPosition();
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (!position) throw new Error("Geolocation is not available");
+      const weather = await WeatherDataFetcher(
+        position.coords.latitude,
+        position.coords.longitude,
+      );
 
-    lastUpdateTime.value = Date.now();
-    cachedData.value = weather;
+      lastUpdateTime.value = Date.now();
+      cachedData.value = weather;
 
-    return weather;
+      return weather;
+    } finally {
+      isLoading.value = false;
+    }
   });
 
   useTask$(({ cleanup }) => {
@@ -78,9 +86,14 @@ export default component$(() => {
     }
   });
 
-  const renderWeatherContent = (data: WeatherData) => (
+  const renderWeatherContent = (data: WeatherData, showLoading: boolean) => (
     <>
-      <div class="m-3 mx-1 block rounded-sm bg-gray-800/50 p-2 py-3 shadow-md focus:invert dark:bg-gray-950/80">
+      <div class="relative m-3 mx-1 block overflow-hidden rounded-sm bg-gray-800/50 p-2 py-3 shadow-md focus:invert dark:bg-gray-950/80">
+        {showLoading && (
+          <div class="absolute inset-x-0 top-0 z-10">
+            <div class="h-[0.125rem] w-full animate-slidein bg-white" />
+          </div>
+        )}
         <div class="text-center font-bold text-white drop-shadow-md [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100"></div>
         <div class="flex items-center justify-center">
           <div
@@ -93,9 +106,14 @@ export default component$(() => {
       </div>
 
       <div
-        class="m-3 mx-1 block rounded-sm bg-[linear-gradient(to_bottom,theme(colors.gray.800/50%)_calc(100%-var(--humidity)),theme(colors.cyan.500/50%)_calc(100%-var(--humidity)))] p-2 py-3 shadow-md focus:invert dark:bg-[linear-gradient(to_bottom,theme(colors.gray.950/80%)_calc(100%-var(--humidity)),theme(colors.cyan.700/50%)_calc(100%-var(--humidity)))]"
+        class="relative m-3 mx-1 block overflow-hidden rounded-sm bg-[linear-gradient(to_bottom,theme(colors.gray.800/50%)_calc(100%-var(--humidity)),theme(colors.cyan.500/50%)_calc(100%-var(--humidity)))] p-2 py-3 shadow-md focus:invert dark:bg-[linear-gradient(to_bottom,theme(colors.gray.950/80%)_calc(100%-var(--humidity)),theme(colors.cyan.700/50%)_calc(100%-var(--humidity)))]"
         style={`--humidity: ${data.current.relativeHumidity2m}%;`}
       >
+        {showLoading && (
+          <div class="absolute inset-x-0 top-0 z-10">
+            <div class="h-[0.125rem] w-full animate-slidein bg-white" />
+          </div>
+        )}
         <div class="text-center font-bold text-white drop-shadow-md [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100"></div>
         <div class="flex items-center justify-center">
           <div class="ml-1 text-2xl font-bold text-white [text-shadow:_0_0_10px_#FFFFFFDD] dark:text-gray-100">
@@ -128,23 +146,19 @@ export default component$(() => {
             if (!cachedData.value) {
               return (
                 <>
-                  <div class="m-3 mx-1 block w-24 overflow-hidden rounded-sm bg-gray-800/50 shadow-md focus:invert dark:bg-gray-950/80">
-                    <div class="h-1 w-full animate-slidein bg-sky-500" />
-                    <div class="flex h-full items-center justify-center">
-                      <span class="i-svg-spinners-3-dots-fade size-10" />
-                    </div>
+                  <div class="m-3 mx-1 flex w-24 items-center justify-center overflow-hidden rounded-sm bg-gray-800/50 shadow-md focus:invert dark:bg-gray-950/80">
+                    <span class="i-svg-spinners-3-dots-fade size-10" />
                   </div>
                 </>
               );
             }
-
             return (
               <button
                 class="flex"
                 onClick$={handleClick}
                 onVisibilityChange$={handleVisibilityChange}
               >
-                {renderWeatherContent(cachedData.value)}
+                {renderWeatherContent(cachedData.value, true)}
               </button>
             );
           }}
@@ -154,7 +168,7 @@ export default component$(() => {
               onClick$={handleClick}
               onVisibilityChange$={handleVisibilityChange}
             >
-              {renderWeatherContent(data)}
+              {renderWeatherContent(data, isLoading.value)}
             </button>
           )}
         />
