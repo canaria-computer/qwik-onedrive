@@ -33,6 +33,7 @@
     "@builder.io/qwik-city": "^1.8.0",
     "@egoist/tailwindcss-icons": "^1.8.1",
     "@iconify/json": "^2.2.238",
+    "@qwikdev/pwa": "^0.0.4",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.14",
     "@types/eslint": "8.56.10",
@@ -62,8 +63,16 @@
     "dayjs": "^1.11.13",
     "fscreen": "^1.2.0",
     "idb": "^8.0.0",
+    "openmeteo": "^1.1.5",
     "superstruct": "^2.0.2",
     "tinygesture": "^3.0.0"
   },
-  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
+  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
+  }
 }
