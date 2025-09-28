@@ -61,7 +61,7 @@
     "cross-fetch": "^4.1.0",
     "dayjs": "^1.11.13",
     "fscreen": "^1.2.0",
-    "idb": "^8.0.2",
+    "idb": "^8.0.3",
     "openmeteo": "^1.1.5",
     "superstruct": "^2.0.2",
     "tinygesture": "^3.0.0"
