@@ -59,7 +59,7 @@
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@microsoft/microsoft-graph-types": "^2.40.0",
     "cross-fetch": "^4.1.0",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.18",
     "fscreen": "^1.2.0",
     "idb": "^8.0.2",
     "openmeteo": "^1.1.5",
