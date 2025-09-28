@@ -54,7 +54,7 @@
     "wrangler": "^3.114.0"
   },
   "dependencies": {
-    "@azure/msal-browser": "^3.28.1",
+    "@azure/msal-browser": "^3.30.0",
     "@material-tailwind/html": "^2.3.2",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@microsoft/microsoft-graph-types": "^2.40.0",
