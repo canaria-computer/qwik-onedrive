@@ -62,7 +62,7 @@
     "dayjs": "^1.11.13",
     "fscreen": "^1.2.0",
     "idb": "^8.0.2",
-    "openmeteo": "^1.1.5",
+    "openmeteo": "^1.2.0",
     "superstruct": "^2.0.2",
     "tinygesture": "^3.0.0"
   },
