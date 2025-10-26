@@ -57,7 +57,7 @@
     "@azure/msal-browser": "^3.28.1",
     "@material-tailwind/html": "^2.3.2",
     "@microsoft/microsoft-graph-client": "^3.0.7",
-    "@microsoft/microsoft-graph-types": "^2.40.0",
+    "@microsoft/microsoft-graph-types": "^2.43.1",
     "cross-fetch": "^4.1.0",
     "dayjs": "^1.11.13",
     "fscreen": "^1.2.0",
